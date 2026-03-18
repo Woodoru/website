@@ -1,27 +1,20 @@
-// Step 1: Import React
-import * as React from 'react'
+import * as React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
+import Seo from "../components/seo"
 
-// Step 2: Define your component
 const AboutPage = () => {
   return (
-    <main>
-      <h1>About Me</h1>
-      <Link to="/">Back to Home</Link>
-      <Layout pageTitle="About Me">
-        <p>Hi there! I'm the proud creator of this site, which I built with Gatsby.</p>
-      </Layout>
-    </main>
+    <Layout>
+      {/* 1. Place the SEO component here to manage the head tags */}
+      <Seo title="About Me" />
+      
+      <h1>About</h1>
+      <p>Nice to meet you!</p>
+      <Link to="/">Home</Link>
+    </Layout> 
   )
 }
 
-export const Head = () => (
-  <>
-    <title>About Me</title>
-    <meta name="description" content="dentistry student in Seoul National University" />
-  </>
-)
-
-// Step 3: Export your component
-export default AboutPage
+// 2. Export the component function, not a single tag
+export default AboutPage;
